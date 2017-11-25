@@ -1,5 +1,5 @@
 # https://git-scm.com/book/en/v2/Git-Internals-Git-Objects
-cd ~/code
+cd ~/tmp
 git init atest
 cd atest
 echo 'test content' | git hash-object -w --stdin
@@ -48,17 +48,21 @@ git cat-file -p 3c4e9cd789d88d8d89c1073707c3585e41b0e614
 
 # The first commit
 echo "This is the first commit"
-echo 'first commit' | git commit-tree d8329f
+firstCommitSHA1=$(echo 'first commit' | git commit-tree d8329f)
+echo "This is SHA-1 of the first commit:   $firstCommitSHA1"
 
 echo "This is the second commit NOT NOT"
-echo 'echo 'second commit' | git commit-tree  0155eb -p <firstcommit>'
+secondCommitSHA1=$(echo 'second commit' | git commit-tree  0155eb -p $firstCommitSHA1)
+echo "This is SHA-1 of the second commit:   $secondCommitSHA1"
 
 
 echo "This is the third commit NOT NOT"
-echo 'echo 'third commit' | git commit-tree  3c4e9c -p <secondcommit>'
+thirdCommitSHA1=$(echo 'third commit' | git commit-tree  3c4e9c -p $secondCommitSHA1)
+echo "This is SHA-1 of the third commit:   $thirdCommitSHA1"
 
-
-echo 'git log --stat <lastcommitSHA-1>'
+echo 'git log of third commit'
+git log --stat $thirdCommitSHA1
 
 echo 'find .git/objects -type f'
+find .git/objects -type f
 echo 'Should show 10 objects'
