@@ -1,5 +1,5 @@
 # https://git-scm.com/book/en/v2/Git-Internals-Git-Objects
-cd ~/tmp
+cd /tmp
 git init atest
 cd atest
 echo 'test content' | git hash-object -w --stdin
