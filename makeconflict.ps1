@@ -1,9 +1,7 @@
 $STARTDIR="X:\gitdir"
 
-mkdir $STARTDIR\zoo
-cd $STARTDIR\zoo
 
-git init
+git init zoo
 
 echo "cat" >> animals.txt
 echo "dog" >> animals.txt
