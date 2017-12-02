@@ -2,13 +2,20 @@
 
 # Build a 2 branch repo to practice on
 
-[[ -d ~/gitdir ]] || echo "No gitdir"; exit 1
+set -e
+
+echo "Running script"
+
+REPONAME="gittest"
+
+[[ -d ~/gitdir ]] || { echo "No gitdir"; exit 1; }
+[[ -d ~/gitdir/$REPONAME ]] && { echo "$REPONAME already exists"; exit 1; }
 
 cd ~/gitdir
 
-git init gittest
+git init $REPONAME
 
-cd gittest || echo "no git repo found"; exit 1
+cd ~/gitdir/$REPONAME || { echo "No git repo found"; exit 1; }
 
 echo "Createing README.md"
 echo "This is a test repo" >> README.md
