@@ -31,19 +31,19 @@ git add file1
 echo "commit file1"
 git commit -m "Added file1"
 echo "Create a branch off of second commit"
-git checkout -b b1
+git checkout -b branch1
 echo "Now add a file to it"
-echo "This is a first file in b1" >> b1file1
-echo "Add it ot b1"
-git add b1file1
-echo "commit it on b1"
-git commit -m "adding b1file1 to b1"
+echo "This is a first file in branch1" >> branch1file1
+echo "Add it ot branch1"
+git add branch1file1
+echo "commit it on branch1"
+git commit -m "adding branch1file1 to branch1"
 echo "Add a line to file1"
-echo "Adding this line from b1" >> file1
+echo "Adding this line from branch1" >> file1
 echo "Add it"
 git add file1
-echo "Commit file1 with appended line on b1"
-git commit -m "Commiting appeneded file1 on b1"
+echo "Commit file1 with appended line on branch1"
+git commit -m "Commiting appeneded file1 on branch1"
 echo "Swtich to master"
 git checkout master
 echo "Append a line to file1 from master"
