@@ -9,7 +9,7 @@ set -e
 
 echo "Running script"
 
-REPONAME="longmaster"
+REPONAME="onelongmaster"
 
 [[ -d ~/gitdir ]] || { echo "No gitdir"; exit 1; }
 [[ -d ~/gitdir/$REPONAME ]] && { echo "$REPONAME already exists"; exit 1; }
