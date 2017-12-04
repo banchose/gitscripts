@@ -21,6 +21,8 @@ cd ~/gitdir/$REPONAME || { echo "No git repo found"; exit 1; }
 
 echo "Createing README.md"
 echo "This is a test repo $REPONAME" >> README.md
+echo "to experiment with git commands" >> README.md
+echo "Creates a 2 branch repo" >> README.md
 echo "adding README.md to repo"
 git add README.md
 echo first commit
